@@ -40,10 +40,6 @@ def newpost():
     
     return render_template('post.html',title="Build a Blog!")
 
-#    @app.route('/', methods=['POST', 'GET'])
-#    def baser():
-#        post = Blog.query.all()
-#        return render_template('blog.html',title="Build a Blog!", post=post)
 
 @app.route('/blog', methods=['POST', 'GET'])
 def blogs():
@@ -127,16 +123,6 @@ def login():
             flash('User password incorrect, or user does not exist', 'danger')
 
     return render_template('login.html')
-
-#    @app.route('/index', methods=['POST', 'GET'])
-#    def index():
-#        blogid = request.args.get('id')
-#        if blogid:
-#
-#            individual_blog = Blog.query.get(int(blogid))
-#            return render_template('individual.html', title="Build a Blog!", post=individual_blog)
-#        else:
-#            return redirect('/')
 
 if __name__ == '__main__':
     app.run()
